@@ -1,10 +1,10 @@
 <div align="center">
 
-# 🗓️ Advance Week Planner
+<img src="assets/banner.svg" alt="Advance Week Planner" width="100%">
 
-### A gorgeous, glassmorphic weekly planner + focus timer — in a **single HTML file**.
+<br><br>
 
-No build step. No dependencies. No backend. No tracking.
+**No build step. No dependencies. No backend. No tracking.**
 Just open it and plan your week.
 
 <br>
@@ -16,7 +16,7 @@ Just open it and plan your week.
 ![Offline](https://img.shields.io/badge/data-stays%20on%20your%20device-14b8c4?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-MIT-f5b400?style=for-the-badge)
 
-**[🇮🇷 فارسی](#-فارسی) · [✨ Features](#-features) · [🚀 Quick Start](#-quick-start) · [🎨 Customization](#-customization) · [💾 Your Data](#-your-data--privacy)**
+**[✨ Features](#-features) · [🌍 Languages](#-6-languages-full-rtl) · [🎨 Customization](#-make-it-yours) · [🚀 Quick Start](#-quick-start) · [💾 Your Data](#-your-data--privacy)**
 
 <br>
 
@@ -26,7 +26,7 @@ Just open it and plan your week.
 
 </div>
 
----
+<p align="center"><img src="assets/divider.svg" width="80%" alt=""></p>
 
 ## ✨ Features
 
@@ -48,20 +48,28 @@ Just open it and plan your week.
 | 📊 | **Day / Week summary** | Planned time vs. starred time, with a per-day breakdown for the whole week |
 | 🎉 | **Confetti** | Finish every task of the day and celebrate (respects `prefers-reduced-motion`) |
 
-### ⏱️ Focus Timer
+<details open>
+<summary><h3>⏱️ Focus Timer</h3></summary>
 
 - Built-in **Pomodoro-style timer** with a smooth animated ring
 - Presets: **15 · 25 · 45 · 60** minutes — or type **any custom duration** (1–600 min)
 - Remaining time is mirrored in the **browser tab title**, so you can keep an eye on it from another tab
 - Optional **beep** (Web Audio) and **vibration** when time is up
 
-### 🕐 World Clocks
+</details>
+
+<details open>
+<summary><h3>🕐 World Clocks</h3></summary>
 
 - Header clock with optional **seconds**, **12/24-hour** mode, and a **pinned city**
 - **18 cities** to choose from — Tehran, Washington, Berlin, London, Tokyo, Baku, Istanbul, Dubai, Moscow, Cairo, Paris, New Delhi, Beijing, Seoul, Sydney, Toronto, Los Angeles, São Paulo
 - Pin any city to show *its* time in the header
 
+</details>
+
 ### 🌍 6 Languages, Full RTL
+
+<p align="center"><img src="assets/languages.svg" width="70%" alt="Hello in six languages"></p>
 
 Switch the entire UI instantly — including layout direction, day names, number formatting and time units:
 
@@ -71,6 +79,8 @@ Switch the entire UI instantly — including layout direction, day names, number
 - Pick which day your **week starts on** (Saturday / Sunday / Monday)
 
 ### 🎨 Make It Yours
+
+<p align="center"><img src="assets/themes.svg" width="80%" alt="Theme colors"></p>
 
 <details open>
 <summary><b>Everything is adjustable from the settings drawer</b></summary>
@@ -94,7 +104,7 @@ Switch the entire UI instantly — including layout direction, day names, number
 
 </details>
 
----
+<p align="center"><img src="assets/divider.svg" width="80%" alt=""></p>
 
 ## 🚀 Quick Start
 
@@ -120,7 +130,7 @@ start Advance-WeekPlanner.html     # Windows
 
 > 💡 The only external request is the optional **Vazirmatn** web font from Google Fonts (used for Persian/Arabic). Without internet, the app falls back gracefully to system fonts.
 
----
+<p align="center"><img src="assets/divider.svg" width="80%" alt=""></p>
 
 ## 💾 Your Data & Privacy
 
@@ -129,7 +139,7 @@ start Advance-WeekPlanner.html     # Windows
 - 📥 **Import** it on another device or browser to restore everything
 - 🗑️ **Two-step confirmation** on destructive actions (*Clear all tasks*, *Reset look & settings*)
 
----
+<p align="center"><img src="assets/divider.svg" width="80%" alt=""></p>
 
 ## 🛠️ Tech
 
@@ -142,7 +152,7 @@ start Advance-WeekPlanner.html     # Windows
 | **i18n** | Built-in dictionary for 6 languages + `Intl` for dates, clocks and numbers |
 | **Persistence** | `localStorage` with sanitized import/restore |
 
----
+<p align="center"><img src="assets/divider.svg" width="80%" alt=""></p>
 
 ## 🤝 Contributing
 
@@ -155,18 +165,16 @@ Ideas, bug reports and PRs are welcome!
 
 Want to add a **new language**? Add a block to the `I18N` / `I18N_EXTRA` dictionaries and a button to the language switcher.
 
----
+<p align="center"><img src="assets/divider.svg" width="80%" alt=""></p>
 
 ## 📄 License
 
 Released under the **MIT License** — see [`LICENSE`](LICENSE).
 
----
+<p align="center"><img src="assets/divider.svg" width="80%" alt=""></p>
 
 ## 👤 Author
 
 Made with care and attention to detail by **Mahdi Barkhordar** (مهدی برخوردار).
 
 If this planner helps you get more done, drop a ⭐ — it means a lot!
-
----
