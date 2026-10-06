@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>برنامه‌ریز هفتگی</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="assets/style.css" rel="stylesheet"/>
+
+</head>
+
+<body>
+
+<div class="blob a"></div>
+<div class="blob b"></div>
+<div class="blob c"></div>
+
+<div class="wrap">
+
+<header class="glass">
+  <div>
+    <h1 class="planner-title">
+  <svg class="planner-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <rect x="3" y="4.5" width="18" height="16" rx="3"></rect>
+    <path d="M7.5 3v4M16.5 3v4M3 9h18"></path>
+    <path class="calendar-dot" d="M8 13h.01M12 13h.01M16 13h.01M8 17h.01M12 17h.01"></path>
+  </svg>
+
+  <span>برنامه‌ریز هفتگی</span>
+</h1>
+    <div class="sub" id="today">چهارشنبه ۸ مهر</div>
+  </div>
+
+  <div class="hbtns">
+
+  <div class="mini-clock">
+    <svg class="clock-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="8.5"></circle>
+      <path d="M12 7v5l3.2 2"></path>
+    </svg>
+
+    <span class="clk"><small id="clockCity" class="clock-city" hidden></small><span id="clock">۰۰:۰۰:۰۰</span></span>
+  </div>
+
+
+    <button class="gear" id="gear" aria-label="تنظیمات">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="3.2"></circle>
+        <path d="M19.4 15a1.8 1.8 0 0 0 .36 1.98l.06.06a1.8 1.8 0 1 1-2.55 2.55l-.06-.06a1.8 1.8 0 0 0-1.98-.36 1.8 1.8 0 0 0-1.1 1.65V21a1.8 1.8 0 1 1-3.6 0v-.18a1.8 1.8 0 0 0-1.1-1.65 1.8 1.8 0 0 0-1.98.36l-.06.06a1.8 1.8 0 1 1-2.55-2.55l.06-.06A1.8 1.8 0 0 0 5.3 15a1.8 1.8 0 0 0-1.65-1.1H3.5a1.8 1.8 0 1 1 0-3.6h.18a1.8 1.8 0 0 0 1.65-1.1 1.8 1.8 0 0 0-.36-1.98l-.06-.06A1.8 1.8 0 1 1 7.46 4.6l.06.06a1.8 1.8 0 0 0 1.98.36 1.8 1.8 0 0 0 1.1-1.65V3.2a1.8 1.8 0 1 1 3.6 0v.18a1.8 1.8 0 0 0 1.1 1.65 1.8 1.8 0 0 0 1.98-.36l.06-.06a1.8 1.8 0 1 1 2.55 2.55l-.06.06a1.8 1.8 0 0 0-.36 1.98 1.8 1.8 0 0 0 1.65 1.1h.18a1.8 1.8 0 1 1 0 3.6h-.18A1.8 1.8 0 0 0 19.4 15Z"></path>
+      </svg>
+    </button>
+
+    <button class="switch" id="sw" role="switch" aria-label="حالت شب و روز" aria-checked="true">
+      <span class="knob" id="knob">
+        <svg style="stroke: none;" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+          <path d="M0 0h16v16H0z" fill="none"></path>
+          <path fill="currentColor" d="M6 .278a.77.77 0 0 1 .08.858a7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316a.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71C0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"></path>
+        </svg>
+      </span>
+    </button>
+
+  </div>
+</header>
+
+  <div class="week" id="week"></div>
+
+  <div class="grid">
+
+    <section class="glass card">
+
+      <div class="card-head">
+        <h2 id="dayTitle"></h2>
+        <div class="tools" id="listTools" hidden>
+          <button type="button" class="tool gold" id="starFilter" aria-pressed="false" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.9 6.8 19.6l1-5.8-4.2-4.1 5.8-.8L12 3.6Z"/></svg></button>
+          <button type="button" class="tool" id="sortTime"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="5.5"/><path d="M9 6.5V9l1.8 1.1"/><path d="M18 5v14M15.5 16.5 18 19l2.5-2.5"/></svg></button>
+          <button type="button" class="tool" id="carryOver"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="12" height="15" rx="3"/><path d="M3 9.5h12"/><path d="M17 12.5h4M19 10l2.5 2.5L19 15"/></svg></button>
+          <button type="button" class="tool" id="clearDone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M9 7V4.5h6V7M7 7l1 12h8l1-12"/><path d="m9.5 13 1.8 1.8 3.2-3.4"/></svg></button>
+          <button type="button" class="tool" id="doneBottom"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h11M4 11h7"/><path d="m4.5 17.5 2.2 2.2 4-4.4"/><path d="M19 4v11M16.5 12.5 19 15l2.5-2.5"/></svg></button>
+        </div>
+      </div>
+
+      <div class="bar">
+        <i id="bar"></i>
+      </div>
+
+      <div class="add">
+        <input type="text" id="task" placeholder="کار جدید بنویس…" maxlength="120">
+        <div class="tp unset" id="tp" role="group"><button type="button" class="tp-x" id="tpX" tabindex="-1"><svg class="ic-clock" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.2 2"/></svg><svg class="ic-x" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button><div class="tp-col" data-k="h" tabindex="0" role="spinbutton" aria-valuemin="1" aria-valuemax="12"><span class="tp-win"></span></div><span class="tp-sep" aria-hidden="true">:</span><div class="tp-col" data-k="m" tabindex="0" role="spinbutton" aria-valuemin="0" aria-valuemax="59"><span class="tp-win"></span></div><div class="tp-col tp-ap" data-k="p" tabindex="0" role="spinbutton" aria-valuemin="0" aria-valuemax="1"><span class="tp-win"></span></div><span class="tp-vbar" aria-hidden="true"></span><div class="tp-col tp-dur" data-k="d" tabindex="0" role="spinbutton" aria-valuemin="0" aria-valuemax="15"><span class="tp-win"></span></div></div>
+        <button class="btn" id="addBtn">افزودن</button>
+      </div>
+
+      <div class="sbx" id="rowsWrap">
+        <div class="rows" id="rows"></div>
+        <div class="sbx-track" aria-hidden="true"><div class="sbx-thumb"></div></div>
+      </div>
+
+      <div class="sum" id="sum">
+        <div class="sum-main">
+          <div class="sum-item"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.2 2"/></svg><span class="sum-l" data-i18n="planned"></span><b class="sum-v" id="sumPlanV">0</b></div>
+          <div class="sum-item gold"><svg class="si" viewBox="0 0 24 24" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.9;stroke-linejoin:round;stroke-linecap:round"><path d="m12 3.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.9 6.8 19.6l1-5.8-4.2-4.1 5.8-.8L12 3.6Z"/></svg><span class="sum-l" data-i18n="starred"></span><b class="sum-v" id="sumStarV">0</b></div>
+          <div class="sum-seg" id="sumSeg" role="group"><button type="button" data-v="day" data-i18n="dayView"></button><button type="button" data-v="week" data-i18n="weekView"></button></div>
+        </div>
+        <div class="sum-share"><i class="g" id="shareG"></i><i class="t" id="shareT"></i></div>
+        <div class="sum-weekwrap"><div><div class="wk" id="wk"></div></div></div>
+      </div>
+
+    </section>
+
+    <section class="glass card timer">
+
+      <h2>تایمر تمرکز</h2>
+
+      <div class="dial">
+        <svg viewBox="0 0 120 120">
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" style="stop-color:var(--accent)"/>
+              <stop offset="1" style="stop-color:var(--accent2)"/>
+            </linearGradient>
+          </defs>
+
+          <circle class="bg" cx="60" cy="60" r="52"/>
+          <circle class="fg" id="fg" cx="60" cy="60" r="52"
+                  stroke-dasharray="326.7"
+                  stroke-dashoffset="0"/>
+        </svg>
+
+        <div class="t" id="tt">25:00</div>
+      </div>
+
+      <div class="presets" id="presets"></div>
+
+      <div class="ctrl">
+        <button class="btn" id="go">شروع</button>
+        <button class="btn soft" id="rs">ریست</button>
+      </div>
+
+      <div class="custom">
+        دقیقه دلخواه:
+        <div class="stepper">
+          <input type="number" id="cm" inputmode="numeric" min="1" max="600" placeholder="مثلاً ۳۰">
+          <div class="stp"><button type="button" class="stp-b" data-d="1" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg></button><button type="button" class="stp-b" data-d="-1" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></div>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</div>
+
+<div class="ov" id="ov"></div>
+
+<aside class="glass drawer" id="drawer" aria-label="تنظیمات">
+
+  <div class="dh">
+
+    <h3>
+      <svg class="title-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="3.2"/>
+        <path d="M19.4 15a1.8 1.8 0 0 0 .36 1.98l.06.06a1.8 1.8 0 1 1-2.55 2.55l-.06-.06a1.8 1.8 0 0 0-1.98-.36 1.8 1.8 0 0 0-1.1 1.65V21a1.8 1.8 0 1 1-3.6 0v-.18a1.8 1.8 0 0 0-1.1-1.65 1.8 1.8 0 0 0-1.98.36l-.06.06a1.8 1.8 0 1 1-2.55-2.55l.06-.06A1.8 1.8 0 0 0 5.3 15a1.8 1.8 0 0 0-1.65-1.1H3.5a1.8 1.8 0 1 1 0-3.6h.18a1.8 1.8 0 0 0 1.65-1.1 1.8 1.8 0 0 0-.36-1.98l-.06-.06A1.8 1.8 0 1 1 7.46 4.6l.06.06a1.8 1.8 0 0 0 1.98.36 1.8 1.8 0 0 0 1.1-1.65V3.2a1.8 1.8 0 1 1 3.6 0v.18a1.8 1.8 0 0 0 1.1 1.65 1.8 1.8 0 0 0 1.98-.36l.06-.06a1.8 1.8 0 1 1 2.55 2.55l-.06.06a1.8 1.8 0 0 0-.36 1.98 1.8 1.8 0 0 0 1.65 1.1h.18a1.8 1.8 0 1 1 0 3.6h-.18A1.8 1.8 0 0 0 19.4 15Z"/>
+      </svg>
+      <span id="drawerTitle">تنظیمات</span>
+    </h3>
+
+    <button class="del" id="close" aria-label="بستن">×</button>
+
+  </div>
+
+  <div class="sbx dsbx" id="drawerWrap">
+  <div class="dscroll" id="dscroll"><div class="dinner" id="dinner">
+  <div class="dsec">
+
+    <h4><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18Z" fill="currentColor"/></svg><span data-i18n="displayMode"></span></h4>
+    <p data-i18n="systemDesc"></p>
+
+    <div class="seg" id="seg">
+
+      <button data-m="system">
+        <svg class="mode-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="13" rx="2"/>
+          <path d="M8 21h8M12 17v4"/>
+        </svg>
+        سیستم
+      </button>
+
+      <button data-m="light">
+        <svg class="mode-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
+        </svg>
+        روز
+      </button>
+
+      <button data-m="dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+	<path d="M0 0h16v16H0z" fill="none" />
+	<path fill="currentColor" d="M6 .278a.77.77 0 0 1 .08.858a7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316a.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71C0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278" />
+</svg>
+
+        شب
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="dsec">
+    <h4><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span data-i18n="languageTitle"></span></h4>
+    <p data-i18n="languageDesc"></p>
+    
+<div class="seg" id="langSeg" style="display:grid;grid-template-columns:repeat(2,1fr);">
+      <button type="button" data-lang="fa"><span class="lc">FA</span>فارسی</button>
+      <button type="button" data-lang="en"><span class="lc">EN</span>English</button>
+      <button type="button" data-lang="fr"><span class="lc">FR</span>Français</button>
+      <button type="button" data-lang="ar"><span class="lc">AR</span>العربية</button>
+      <button type="button" data-lang="ru"><span class="lc">RU</span>Русский</button>
+      <button type="button" data-lang="zh"><span class="lc">ZH</span>中文</button>
+    </div>
+  </div>
+
+  <div class="dsec">
+
+    <h4><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.6-.8 1.3-1.7-.4-1.1.4-2.3 1.6-2.3H17a4 4 0 0 0 4-4c0-5-4-10-9-10Z"/><path d="M7.5 11h.01M10 7h.01M15 7.5h.01"/></svg><span data-i18n="themeColor"></span></h4>
+    <p data-i18n="themeDesc"></p>
+
+    <div class="sws" id="sws"></div>
+
+  </div>
+
+  <div class="dsec">
+
+    <h4><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V11a7 7 0 0 1 7-7h9"/></svg><span data-i18n="radius"></span></h4>
+
+    <div class="rv">
+      <span data-i18n="less"></span>
+      <span id="rval"></span>
+      <span data-i18n="more"></span>
+    </div>
+
+    <input type="range" id="rr" min="12" max="44" step="2">
+
+  </div>
+
+  <div class="dsec">
+    <h4><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7V5h11v2M9.5 5v14M7 19h5"/><path d="M14 12v-1h7v1M17.5 11v8M16 19h3"/></svg><span data-i18n="fontSize"></span></h4>
+    <p data-i18n="fontSizeDesc"></p>
+    <div class="rv">
+      <span class="ab" style="font-size:.7rem">A</span>
+      <span id="fsval"></span>
+      <span class="ab" style="font-size:1.05rem">A</span>
+    </div>
+    <input type="range" id="fsr" min="85" max="125" step="5">
+  </div>
+
+  <div class="dsec">
+    <h4><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span data-i18n="density"></span></h4>
+    <p data-i18n="densityDesc"></p>
+    <div class="seg" id="densSeg">
+      <button type="button" data-v="cozy"><svg class="mode-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span data-i18n="cozy"></span></button>
+      <button type="button" data-v="compact"><svg class="mode-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 9.7h16M4 14.3h16M4 19h16"/></svg><span data-i18n="compact"></span></button>
+    </div>
+  </div>
+
+  <div class="dsec">
+    <h4><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3s6 6.2 6 10.5a6 6 0 0 1-12 0C6 9.2 12 3 12 3Z"/></svg><span data-i18n="glass"></span></h4>
+    <p data-i18n="glassDesc"></p>
+    <div class="rv">
+      <span data-i18n="less"></span>
+      <span id="blval"></span>
+      <span data-i18n="more"></span>
+    </div>
+    <input type="range" id="blr" min="0" max="40" step="2">
+  </div>
+
+  <div class="dsec">
+    <h4><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="3"/><path d="M7.5 3v4M16.5 3v4M3 9h18"/><path d="M7 13h4"/></svg><span data-i18n="firstDay"></span></h4>
+    <p data-i18n="firstDayDesc"></p>
+    <div class="seg" id="fdSeg">
+      <button type="button" data-v="0"></button>
+      <button type="button" data-v="1"></button>
+      <button type="button" data-v="2"></button>
+    </div>
+  </div>
+
+  <div class="dsec" id="digSec">
+    <h4><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h14M5 15h14M10 4 8 20M16 4l-2 16"/></svg><span data-i18n="digits"></span></h4>
+    <p data-i18n="digitsDesc"></p>
+    <div class="seg" id="digSeg">
+      <button type="button" data-v="local" id="digLocal"></button>
+      <button type="button" data-v="latin">123</button>
+    </div>
+  </div>
+
+  <div class="dsec">
+    <label class="opt"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18"/><path d="M10.6 6.1A9.8 9.8 0 0 1 12 6c5 0 8.5 4 9.5 6a13 13 0 0 1-2.6 3.4M6.6 7.6A13 13 0 0 0 2.5 12c1 2 4.5 6 9.5 6 1.5 0 2.8-.4 4-.9"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg><span class="ot"><b data-i18n="hideDone"></b><small data-i18n="hideDoneDesc"></small></span><input type="checkbox" class="tg" id="tgHide"></label>
+    <label class="opt"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16v-5a6 6 0 0 1 12 0v5l1.5 2h-15L6 16Z"/><path d="M10 21h4"/></svg><span class="ot"><b data-i18n="sound"></b><small data-i18n="soundDesc"></small></span><input type="checkbox" class="tg" id="tgSnd"></label>
+    <label class="opt"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z"/><path d="M19 16v4M17 18h4"/></svg><span class="ot"><b data-i18n="blobs"></b><small data-i18n="blobsDesc"></small></span><input type="checkbox" class="tg" id="tgBlobs"></label>
+    <label class="opt"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.2 2"/></svg><span class="ot"><b data-i18n="h12"></b><small data-i18n="h12Desc"></small></span><input type="checkbox" class="tg" id="tgH12"></label>
+    <label class="opt"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="7.5"/><path d="M12 13V9M9.5 3h5"/></svg><span class="ot"><b data-i18n="showSec"></b><small data-i18n="showSecDesc"></small></span><input type="checkbox" class="tg" id="tgSec"></label>
+  </div>
+
+      <div class="dsec">
+    <h4><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7V5h11v2M9.5 5v14M7 19h5"/><path d="M14 12v-1h7v1M17.5 11v8M16 19h3"/></svg><span data-i18n="fontTitle"></span></h4>
+    <p data-i18n="fontDesc"></p>
+    <div class="seg" id="fontSeg"><button type="button" data-v="auto"><b class="fx">Aa</b><span data-i18n="fontAuto"></span></button><button type="button" data-v="system"><b class="fx">Aa</b><span data-i18n="fontSystem"></span></button><button type="button" data-v="rounded"><b class="fx">Aa</b><span data-i18n="fontRounded"></span></button><button type="button" data-v="serif"><b class="fx">Aa</b><span data-i18n="fontSerif"></span></button><button type="button" data-v="mono"><b class="fx">Aa</b><span data-i18n="fontMono"></span></button></div>
+  </div>
+
+  <div class="dsec">
+    <h4><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg><span data-i18n="bgTitle"></span></h4>
+    <p data-i18n="bgDesc"></p>
+    <div class="seg" id="bgSeg"><button type="button" data-v="none"><span data-i18n="bgNone"></span></button><button type="button" data-v="dots"><span data-i18n="bgDots"></span></button><button type="button" data-v="grid"><span data-i18n="bgGrid"></span></button><button type="button" data-v="noise"><span data-i18n="bgNoise"></span></button></div>
+  </div>
+
+  <div class="dsec">
+    <h4><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="2.5"/><rect x="3" y="14" width="18" height="6" rx="2.5"/></svg><span data-i18n="rowTitle"></span></h4>
+    <p data-i18n="rowDesc"></p>
+    <div class="seg" id="rsSeg"><button type="button" data-v="glass"><span data-i18n="rowGlass"></span></button><button type="button" data-v="flat"><span data-i18n="rowFlat"></span></button><button type="button" data-v="outline"><span data-i18n="rowOutline"></span></button></div>
+  </div>
+
+  <div class="dsec">
+    <h4><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z"/><path d="M19 16v4M17 18h4"/></svg><span data-i18n="finishTitle"></span></h4>
+    <p data-i18n="finishDesc"></p>
+    <div class="seg" id="dnSeg"><button type="button" data-v="strike"><span data-i18n="doneStrike"></span></button><button type="button" data-v="dim"><span data-i18n="doneDim"></span></button></div>
+    <label class="opt"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20 9 7l8 8-13 5Z"/><path d="M14 4v2M19 9h2M17 3l1 1.5M20.5 14l-1.5-.5"/></svg><span class="ot"><b data-i18n="confetti"></b><small data-i18n="confettiDesc"></small></span><input type="checkbox" class="tg" id="tgConf"></label>
+  </div>
+
+  <div class="dsec" id="wcSec">
+    <h4><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3c2.4 2.5 3.4 5.6 3.4 9s-1 6.5-3.4 9M12 3c-2.4 2.5-3.4 5.6-3.4 9s1 6.5 3.4 9"/><path d="M4 8.5h16M4 15.5h16"/></svg><span data-i18n="worldClock"></span></h4>
+    <p data-i18n="worldClockDesc"></p>
+    <div class="wc" id="wcList"></div>
+    <div class="wcs" id="wcChips"></div>
+  </div>
+
+  <div class="dsec">
+    <h4><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg><span data-i18n="data"></span></h4>
+    <p data-i18n="dataDesc"></p>
+    <button class="btn soft" id="exp" type="button"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 20h14"/></svg><span data-i18n="export"></span></button>
+    <button class="btn soft" id="imp" type="button"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V4M7.5 8.5 12 4l4.5 4.5M5 20h14"/></svg><span data-i18n="import"></span></button>
+    <button class="btn soft" id="rstP" type="button"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.6-5.9L4 8.5"/><path d="M4 4v4.5h4.5"/></svg><span id="rstPL" data-i18n="resetPrefs"></span></button>
+    <button class="btn soft" id="clr" type="button"><svg class="si" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6"/></svg><span id="clrL" data-i18n="clear"></span></button>
+    <input type="file" id="impFile" accept=".json,application/json" hidden>
+    <p class="dstat" id="dstat" role="status" aria-live="polite"></p>
+  </div>
+
+  <div class="creator-card" id="creatorCard">
+    <div class="creator-icon" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+	<path d="M0 0h24v24H0z" fill="none" />
+	<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+		<path d="M6.818 22v-2.857C6.662 17.592 5.633 16.416 4.682 15m9.772 7v-1.714c4.91 0 4.364-5.714 4.364-5.714s2.182 0 2.182-2.286l-2.182-3.428c0-4.572-3.709-6.816-7.636-6.857c-2.2-.023-3.957.53-5.27 1.499" />
+		<path d="m13 7l2 2.5l-2 2.5M5 7L3 9.5L5 12m5-6l-2 7" />
+	</g>
+</svg>
+
+    </div>
+    <div class="creator-copy">
+      <strong id="creatorTitle">سازنده</strong>
+      <b id="creatorName">مهدی برخوردار</b>
+      <span id="creatorDesc">ساخته شده با دقت و عشق به جزئیات</span>
+    </div>
+  </div>
+
+
+  </div></div>
+  <div class="sbx-track" aria-hidden="true"><div class="sbx-thumb"></div></div>
+</div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden><span id="toastMsg"></span><button type="button" id="toastUndo"></button></div>
+
+<script src="assets/script.js" defer></script>
+</body>
+</html>
+
