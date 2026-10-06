@@ -165,7 +165,7 @@ Released under the **MIT License** — see [`LICENSE`](LICENSE).
 
 ## 👤 Author
 
-Made with care and attention to detail by **Navid Mehrabani** (نوید مهربانی).
+Made with care and attention to detail by **Mahdi Barkhordar** (مهدی برخوردار).
 
 If this planner helps you get more done, drop a ⭐ — it means a lot!
 
